@@ -14,13 +14,13 @@ void planet (int x1, int y1,
 double dist (int x1, int y1,
              int x2, int y2);
 
-void cosmo_stares_game (int x1, int y1, int vx1, int vy1,
-                        int x2, int y2,
-                        int x3, int y3,
-                        int x4, int vx4,
-                        int y6,
-                        int y7,
-                        int y8,
+void cosmo_stares_game (int x_arabela, int y_arabela, int vx_arabela, int vy_arabela,
+                        int x_planet_1, int y_planet_1,
+                        int x_planet_2, int y_planet_2,
+                        int x_star, int vx_star,
+                        int y_star_ryad_1,
+                        int y_star_ryad_2,
+                        int y_star_ryad_3,
                         int dt);
 
 
@@ -120,9 +120,9 @@ void planet (int x1, int y1,
 
 
 void star (int x,
-            int y1,
-            int y2,
-            int y3)
+           int y1,
+           int y2,
+           int y3)
 {
   int ryadi = 5;
   int i = 0;
@@ -156,13 +156,13 @@ double dist (int x1, int y1,
 
 
 
-void cosmo_stares_game (int x1, int y1, int vx1, int vy1,
-                        int x2, int y2,
-                        int x3, int y3,
-                        int x4, int vx4,
-                        int y6,
-                        int y7,
-                        int y8,
+void cosmo_stares_game (int x_arabela, int y_arabela, int vx_arabela, int vy_arabela,
+                        int x_planet_1, int y_planet_1,
+                        int x_planet_2, int y_planet_2,
+                        int x_star, int vx_star,
+                        int y_star_ryad_1,
+                        int y_star_ryad_2,
+                        int y_star_ryad_3,
                         int dt)
 {
   int lose_dist = 30;
@@ -178,52 +178,52 @@ void cosmo_stares_game (int x1, int y1, int vx1, int vy1,
     txClear ();
 
 
-    double d1 = dist (x1, y1,
-                      x4, y6);
-    double d2 = dist (x1, y1,
-                      x4, y7);
-    double d3 = dist (x1, y1,
-                      x4, y8);
+    double d_star_ryad_1_1 = dist (x_arabela, y_arabela,
+                      x_star, y_star_ryad_1);
+    double d_star_ryad_1_2 = dist (x_arabela, y_arabela,
+                      x_star, y_star_ryad_2);
+    double d_star_ryad_1_3 = dist (x_arabela, y_arabela,
+                      x_star, y_star_ryad_3);
 
 
-    double d4 = dist (x1, y1,
-                     (x4 + 190), y6);
-    double d5 = dist (x1, y1,
-                     (x4 + 190), y7);
-    double d6 = dist (x1, y1,
-                     (x4 + 190), y8);
+    double d_star_ryad_2_1 = dist (x_arabela, y_arabela,
+                     (x_star + 190), y_star_ryad_1);
+    double d_star_ryad_2_2 = dist (x_arabela, y_arabela,
+                     (x_star + 190), y_star_ryad_2);
+    double d_star_ryad_2_3 = dist (x_arabela, y_arabela,
+                     (x_star + 190), y_star_ryad_3);
 
 
-    double d7 = dist (x1, y1,
-                     (x4 + 380), y6);
-    double d8 = dist (x1, y1,
-                     (x4 + 380), y7);
-    double d9 = dist (x1, y1,
-                     (x4 + 380), y8);
+    double d_star_ryad_3_1 = dist (x_arabela, y_arabela,
+                     (x_star + 380), y_star_ryad_1);
+    double d_star_ryad_3_2 = dist (x_arabela, y_arabela,
+                     (x_star + 380), y_star_ryad_2);
+    double d_star_ryad_3_3 = dist (x_arabela, y_arabela,
+                     (x_star + 380), y_star_ryad_3);
 
 
-    double d10 = dist (x1, y1,
-                      (x4 + 470), y6);
-    double d11 = dist (x1, y1,
-                      (x4 + 470), y7);
-    double d12 = dist (x1, y1,
-                      (x4 + 470), y8);
+    double d_star_ryad_4_1 = dist (x_arabela, y_arabela,
+                      (x_star + 470), y_star_ryad_1);
+    double d_star_ryad_4_2 = dist (x_arabela, y_arabela,
+                      (x_star + 470), y_star_ryad_2);
+    double d_star_ryad_4_3 = dist (x_arabela, y_arabela,
+                      (x_star + 470), y_star_ryad_3);
 
 
 
-    double d13 = dist (x1, y1,
-                      (x4 + 660), y6);
-    double d14 = dist (x1, y1,
-                      (x4 + 660), y7);
-    double d15 = dist (x1, y1,
-                      (x4 + 660), y8);
+    double d_star_ryad_5_1 = dist (x_arabela, y_arabela,
+                      (x_star + 660), y_star_ryad_1);
+    double d_star_ryad_5_2 = dist (x_arabela, y_arabela,
+                      (x_star + 660), y_star_ryad_2);
+    double d_star_ryad_5_3 = dist (x_arabela, y_arabela,
+                      (x_star + 660), y_star_ryad_3);
 
 
-    if (d1 < lose_dist || d2 < lose_dist || d3 < lose_dist ||
-        d4 < lose_dist || d5 < lose_dist || d6 < lose_dist ||
-        d7 < lose_dist || d8 < lose_dist || d9 < lose_dist ||
-        d10 < lose_dist || d11 < lose_dist || d12 < lose_dist ||
-        d13 < lose_dist || d14 < lose_dist || d15 < lose_dist)
+    if (d_star_ryad_1_1 < lose_dist || d_star_ryad_1_2 < lose_dist || d_star_ryad_1_3 < lose_dist ||
+        d_star_ryad_2_1 < lose_dist || d_star_ryad_2_2 < lose_dist || d_star_ryad_2_3 < lose_dist ||
+        d_star_ryad_3_1 < lose_dist || d_star_ryad_3_2 < lose_dist || d_star_ryad_3_3 < lose_dist ||
+        d_star_ryad_4_1 < lose_dist || d_star_ryad_4_2 < lose_dist || d_star_ryad_4_3 < lose_dist ||
+        d_star_ryad_5_1 < lose_dist || d_star_ryad_5_2 < lose_dist || d_star_ryad_5_3 < lose_dist)
     {
       txMessageBox ("Не фартануло, не получилось");
 
@@ -231,7 +231,7 @@ void cosmo_stares_game (int x1, int y1, int vx1, int vy1,
     }
 
 
-    if (y1 >= y2)
+    if (y_arabela >= y_planet_1)
     {
       txMessageBox ("Красаувчек ежжи!!");
 
@@ -241,64 +241,64 @@ void cosmo_stares_game (int x1, int y1, int vx1, int vy1,
 
 
     if (GetAsyncKeyState (VK_UP))
-        (vy1)--;
+        (vy_arabela)--;
 
     if (GetAsyncKeyState (VK_DOWN))
-        (vy1)++;
+        (vy_arabela)++;
 
     if (GetAsyncKeyState (VK_LEFT))
-        (vx1)--;
+        (vx_arabela)--;
 
     if (GetAsyncKeyState (VK_RIGHT))
-        (vx1)++;
+        (vx_arabela)++;
 
     if (GetAsyncKeyState (VK_SPACE))
-        (vx1) = 0;
+        (vx_arabela) = 0;
 
     if (GetAsyncKeyState (VK_SPACE))
-        (vy1) = 0;
+        (vy_arabela) = 0;
 
 
 
 
-    arabela (x1, y1);
+    arabela (x_arabela, y_arabela);
 
-    planet (x2, y2,
-            x3, y3);
+    planet (x_planet_1, y_planet_1,
+            x_planet_2, y_planet_2);
 
-    star (x4,
-          y6,
-          y7,
-          y8);
-
-
-
-    if (x1 < 0)
-        (vx1) = - (vx1);
-
-    if (x1 > 1000)
-        (vx1) = - (vx1);
+    star (x_star,
+          y_star_ryad_1,
+          y_star_ryad_2,
+          y_star_ryad_3);
 
 
-    if (x4 < 0)
-        (vx4) = - (vx4);
 
-    if (x4 > 249)
-        (vx4) = - (vx4);
+    if (x_arabela < 0)
+        (vx_arabela) = - (vx_arabela);
 
-
-    if (y1 < 600)
-        (vy1) = - (vy1);
-
-    if (y1 > 0)
-        (vy1) = - (vy1);
+    if (x_arabela > 1000)
+        (vx_arabela) = - (vx_arabela);
 
 
-    x1 = x1 + vx1 * dt;
+    if (x_star < 0)
+        (vx_star) = - (vx_star);
 
-    y1 = y1 + vy1 * dt;
+    if (x_star > 249)
+        (vx_star) = - (vx_star);
 
-    x4 = x4 + vx4 * dt;
+
+    if (y_arabela < 600)
+        (vy_arabela) = - (vy_arabela);
+
+    if (y_arabela > 0)
+        (vy_arabela) = - (vy_arabela);
+
+
+    x_arabela = x_arabela + vx_arabela * dt;
+
+    y_arabela = y_arabela + vy_arabela * dt;
+
+    x_star = x_star + vx_star * dt;
 
     txSleep (25);
   }
