@@ -266,6 +266,8 @@ double dist_arabela_star (int x_arabela, int y_arabela,
   {
     return 1;
   }
+  else
+    return 0;
 }
 
 
