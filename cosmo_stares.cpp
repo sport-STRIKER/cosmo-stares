@@ -25,10 +25,10 @@ double dist_arabela_star (int x_arabela, int y_arabela,
                           int y_star_ryad_3);
 
 
-void cosmo_stares_game (int x_arabela, int y_arabela, int vx_arabela, int vy_arabela,
+void cosmo_stares_game (int x_arabela,  int y_arabela, int vx_arabela, int vy_arabela,
                         int x_planet_1, int y_planet_1,
                         int x_planet_2, int y_planet_2,
-                        int x_star, int vx_star,
+                        int x_star,     int vx_star,
                         int y_star_ryad_1,
                         int y_star_ryad_2,
                         int y_star_ryad_3,
@@ -67,16 +67,16 @@ int main()
 
   //move_cosmo_stares_arabela ();
 
-  //move_cosmo_stares_stare  ();
+  //move_cosmo_stares_stare ();
 
   //arabela (500, 100);
 
   /*star (10,
-        214,
-        314,
-        414);*/
+          214,
+          314,
+          414);*/
 
-/*
+  /*
   planet (0, 500,
           1000, 600);*/
 
@@ -114,22 +114,22 @@ void arabela (int x, int y)
   txSetColor (TX_BLUE);
 
   txLine (x_machta1, y_machta1,
-          x, y);
+        x, y);
 
   txSetColor (TX_WHITE);
   txSetFillColor (TX_WHITE);
 
   txLine (x_parus1, y_parus1,
-          x_parus2, y_parus2);
+  x_parus2, y_parus2);
   txLine (x_parus1, y_parus1,
-          x_parus3, y_parus3);
+  x_parus3, y_parus3);
 
 
   txSetColor (TX_BLUE);
   txSetFillColor (TX_BLACK);
 
   txRectangle (x_korma1, y_korma1,
-               x_korma2, y_korma2);
+  x_korma2, y_korma2);
 }
 
 
@@ -161,11 +161,11 @@ void star (int x,
     txSetColor (TX_YELLOW);
     txSetFillColor (TX_YELLOW);
 
-    txCircle (x, y1, 5);
+    txCircle (x, y1, 3);
 
-    txCircle (x, y2, 5);
+    txCircle (x, y2, 3);
 
-    txCircle (x, y3, 5);
+    txCircle (x, y3, 3);
 
     x = x + 190;
 
@@ -179,7 +179,17 @@ void star (int x,
 double dist (int x1, int y1,
              int x2, int y2)
 {
-  return sqrt ((x2  - x1) * (x2  - x1) + (y2 - y1) * (y2 - y1));
+  /*txSetColor (TX_RED);
+  txSetFillColor (TX_RED);
+
+  txCircle (x1, y1, 5);
+
+  txSetColor (TX_GREEN);
+  txSetFillColor (TX_GREEN);
+
+  txCircle (x2, y2, 5);*/
+
+  return sqrt ((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
 }
 
 
@@ -193,70 +203,25 @@ double dist_arabela_star (int x_arabela, int y_arabela,
 {
   int lose_dist = 30;
 
-  double d_star_ryad_1_1 = dist (x_arabela, y_arabela,
-                                 x_star,
-                                 y_star_ryad_1);
+  double d_star_ryad_1_1 = dist (x_arabela, y_arabela, x_star, y_star_ryad_1);
+  double d_star_ryad_1_2 = dist (x_arabela, y_arabela, x_star, y_star_ryad_2);
+  double d_star_ryad_1_3 = dist (x_arabela, y_arabela, x_star, y_star_ryad_3);
 
-  double d_star_ryad_1_2 = dist (x_arabela, y_arabela,
-                                 x_star,
-                                 y_star_ryad_2);
+  double d_star_ryad_2_1 = dist (x_arabela, y_arabela, (x_star + 190), y_star_ryad_1);
+  double d_star_ryad_2_2 = dist (x_arabela, y_arabela, (x_star + 190), y_star_ryad_2);
+  double d_star_ryad_2_3 = dist (x_arabela, y_arabela, (x_star + 190), y_star_ryad_3);
 
-  double d_star_ryad_1_3 = dist (x_arabela, y_arabela,
-                                 x_star,
-                                 y_star_ryad_3);
+  double d_star_ryad_3_1 = dist (x_arabela, y_arabela, (x_star + 380), y_star_ryad_1);
+  double d_star_ryad_3_2 = dist (x_arabela, y_arabela, (x_star + 380), y_star_ryad_2);
+  double d_star_ryad_3_3 = dist (x_arabela, y_arabela, (x_star + 380), y_star_ryad_3);
 
+  double d_star_ryad_4_1 = dist (x_arabela, y_arabela, (x_star + 570), y_star_ryad_1);
+  double d_star_ryad_4_2 = dist (x_arabela, y_arabela, (x_star + 570), y_star_ryad_2);
+  double d_star_ryad_4_3 = dist (x_arabela, y_arabela, (x_star + 570), y_star_ryad_3);
 
-  double d_star_ryad_2_1 = dist (x_arabela, y_arabela,
-                                (x_star + 190),
-                                 y_star_ryad_1);
-
-  double d_star_ryad_2_2 = dist (x_arabela, y_arabela,
-                                (x_star + 190),
-                                 y_star_ryad_2);
-
-  double d_star_ryad_2_3 = dist (x_arabela, y_arabela,
-                                (x_star + 190),
-                                 y_star_ryad_3);
-
-
-  double d_star_ryad_3_1 = dist (x_arabela, y_arabela,
-                                (x_star + 380),
-                                 y_star_ryad_1);
-
-  double d_star_ryad_3_2 = dist (x_arabela, y_arabela,
-                                (x_star + 380),
-                                 y_star_ryad_2);
-
-  double d_star_ryad_3_3 = dist (x_arabela, y_arabela,
-                                (x_star + 380),
-                                 y_star_ryad_3);
-
-
-  double d_star_ryad_4_1 = dist (x_arabela, y_arabela,
-                                (x_star + 470),
-                                 y_star_ryad_1);
-
-  double d_star_ryad_4_2 = dist (x_arabela, y_arabela,
-                                (x_star + 470),
-                                 y_star_ryad_2);
-
-  double d_star_ryad_4_3 = dist (x_arabela, y_arabela,
-                                (x_star + 470),
-                                 y_star_ryad_3);
-
-
-
-  double d_star_ryad_5_1 = dist (x_arabela, y_arabela,
-                                (x_star + 660),
-                                 y_star_ryad_1);
-
-  double d_star_ryad_5_2 = dist (x_arabela, y_arabela,
-                                (x_star + 660),
-                                 y_star_ryad_2);
-
-  double d_star_ryad_5_3 = dist (x_arabela, y_arabela,
-                                (x_star + 660),
-                                 y_star_ryad_3);
+  double d_star_ryad_5_1 = dist (x_arabela, y_arabela, (x_star + 760), y_star_ryad_1);
+  double d_star_ryad_5_2 = dist (x_arabela, y_arabela, (x_star + 760), y_star_ryad_2);
+  double d_star_ryad_5_3 = dist (x_arabela, y_arabela, (x_star + 760), y_star_ryad_3);
 
   if (d_star_ryad_1_1 < lose_dist || d_star_ryad_1_2 < lose_dist || d_star_ryad_1_3 < lose_dist ||
       d_star_ryad_2_1 < lose_dist || d_star_ryad_2_2 < lose_dist || d_star_ryad_2_3 < lose_dist ||
@@ -266,7 +231,7 @@ double dist_arabela_star (int x_arabela, int y_arabela,
   {
     return 1;
   }
-  else
+    else
     return 0;
 }
 
@@ -300,13 +265,11 @@ void cosmo_stares_game (int x_arabela, int y_arabela, int vx_arabela, int vy_ara
                                         y_star_ryad_3);
 
 
-
-
     if (uslovie == 1)
     {
-      txMessageBox ("Íå ôàðòàíóëî, íå ïîëó÷èëîñü");
+        txMessageBox ("ÃÃ¥ Ã´Ã Ã°Ã²Ã Ã Ã³Ã«Ã®, Ã Ã¥ Ã¯Ã®Ã«Ã³Ã·Ã¨Ã«Ã®Ã±Ã¼");
 
-      break;
+        break;
     }
 
 
@@ -314,34 +277,26 @@ void cosmo_stares_game (int x_arabela, int y_arabela, int vx_arabela, int vy_ara
 
     if (y_arabela >= y_planet_1)
     {
-      txMessageBox ("Êðàñàóâ÷åê åææè!!");
+        txMessageBox ("ÃŠÃ°Ã Ã±Ã Ã³Ã¢Ã·Ã¥Ãª Ã¥Ã¦Ã¦Ã¨!!");
 
-      break;
+        break;
     }
 
 
-
-
     control_cosmo_stares_game (&vx_arabela, &vy_arabela,
-                               VK_UP, VK_DOWN, VK_LEFT, VK_RIGHT, VK_SPACE);
+                                VK_UP, VK_DOWN, VK_LEFT, VK_RIGHT, VK_SPACE);
     move_cosmo_stares_arabela (&x_arabela, &y_arabela, &vx_arabela, &vy_arabela,
                                &dt);
 
     arabela (x_arabela, y_arabela);
 
 
-
-
-
     planet (x_planet_1, y_planet_1,
             x_planet_2, y_planet_2);
 
 
-
-
     move_cosmo_stares_stare (&x_star, &vx_star,
                              &dt);
-
     star (x_star,
           y_star_ryad_1,
           y_star_ryad_2,
